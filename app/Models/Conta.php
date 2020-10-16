@@ -9,6 +9,7 @@ class Conta extends Model
 {
     private $id;
     private $saldo;
+    private $tipo;
     protected $fillable = ["id", "saldo"];
 
     /**
@@ -47,6 +48,31 @@ class Conta extends Model
     public function setSaldo($saldo)
     {
         $this->saldo = $saldo;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of tipo
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
+    public function getNomeTipo()
+    {
+        return $this->tipo ? "comum" : "especial";
+    }
+
+    /**
+     * Set the value of tipo
+     *
+     * @return  self
+     */
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
 
         return $this;
     }

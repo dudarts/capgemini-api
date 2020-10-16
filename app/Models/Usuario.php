@@ -9,15 +9,16 @@ class Usuario extends Model
 {
     private $id;
     private $nome;
-    private $email;
+    private $cpf;
     private $senha;
-    protected $fillable = ['id','nome', 'email', 'senha'];
+    private $admin;
+    protected $fillable = ['id','nome', 'cpf', 'senha', 'admin'];
 
     //public function __construct(Usuario $usuario)
     //{
     //    $this->id = $usuario->id;
     //    $this->nome = $usuario->nome;
-    //    $this->email = $usuario->email;
+    //    $this->cpf = $usuario->cpf;
     //    $this->senha = $usuario->senha;
     //}
 
@@ -62,21 +63,21 @@ class Usuario extends Model
     }
 
     /**
-     * Get the value of email
+     * Get the value of cpf
      */
-    public function getEmail()
+    public function getcpf()
     {
-        return $this->email;
+        return $this->cpf;
     }
 
     /**
-     * Set the value of email
+     * Set the value of cpf
      *
      * @return  self
      */
-    public function setEmail($email)
+    public function setcpf($cpf)
     {
-        $this->email = $email;
+        $this->cpf = $cpf;
 
         return $this;
     }
@@ -97,6 +98,26 @@ class Usuario extends Model
     public function setSenha($senha)
     {
         $this->senha = $senha;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of admin
+     */
+    public function getAdmin()
+    {
+        return $this->admin;
+    }
+
+    /**
+     * Set the value of admin
+     *
+     * @return  self
+     */
+    public function setAdmin($admin)
+    {
+        $this->admin = $admin;
 
         return $this;
     }
