@@ -14,13 +14,6 @@ class Usuario extends Model
     private $admin;
     protected $fillable = ['id','nome', 'cpf', 'senha', 'admin'];
 
-    //public function __construct(Usuario $usuario)
-    //{
-    //    $this->id = $usuario->id;
-    //    $this->nome = $usuario->nome;
-    //    $this->cpf = $usuario->cpf;
-    //    $this->senha = $usuario->senha;
-    //}
 
     /**
      * Get the value of id

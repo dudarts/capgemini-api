@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Usuario;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        //$this->call(UsuarioAdmin::class);
+        Usuario::factory()->create();
+        //\App\Models\Usuario::factory(10)->create();
+        //\App\Models\Conta::factory(10)->create();
+        //\App\Models\Extrato::factory(50)->create();
     }
 }

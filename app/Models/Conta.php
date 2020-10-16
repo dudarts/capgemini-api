@@ -10,7 +10,8 @@ class Conta extends Model
     private $id;
     private $saldo;
     private $tipo;
-    protected $fillable = ["id", "saldo"];
+    private $usuarioId;
+    protected $fillable = ["id", "saldo", "usuarioId"];
 
     /**
      * Get the value of id

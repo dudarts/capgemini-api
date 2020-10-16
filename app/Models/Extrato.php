@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Extrato extends Model
 {
     private $id;
-    private $usuarioId;
     private $contaId;
     private $valor;
+    private $fillable = ["id", "contaId", "valor"];
 
     /**
      * Get the value of id
