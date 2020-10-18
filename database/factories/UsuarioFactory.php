@@ -23,9 +23,10 @@ class UsuarioFactory extends Factory
     {
         return [
             "nome" => $this->faker->name,
-            "cpf" => (string) $this->faker->unique()->rand(10000000000, 99999999999),
-            "senha" => $this->faker->rand(1000, 9999),
+            "cpf" => (string) $this->faker->unique()->numberBetween($min = 10000000000, $max = 99999999999),
+            "senha" => $this->faker->numberBetween($min = 1000, $max = 9999),
             "admin" => false
         ];
     }
+
 }

@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Extrato extends Model
 {
+    use HasFactory;
     private $id;
     private $contaId;
     private $valor;
-    private $fillable = ["id", "contaId", "valor"];
+    protected $fillable = ["id", "contaId", "valor"];
 
     /**
      * Get the value of id

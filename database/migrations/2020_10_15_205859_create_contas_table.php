@@ -16,9 +16,10 @@ class CreateContasTable extends Migration
         Schema::create('contas', function (Blueprint $table) {
             $table->id();
             $table->boolean("tipo")->default(false);
+            $table->decimal("saldo")->nullable(false)->default(0);
             $table->decimal("limite")->default(0);
+            $table->foreignId('usuarioId')->constrained('usuarios');
             $table->timestamps();
-            $table->foreignId('usuario_id')->constrained('usuarios');
         });
     }
 

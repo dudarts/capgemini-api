@@ -15,12 +15,9 @@ class CreateExtratosTable extends Migration
     {
         Schema::create('extratos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger("usuarioId")->nullable(false);
-            $table->unsignedInteger("contaId")->nullable(false);
             $table->decimal("valor");
+            $table->foreignId('contaId')->constrained('contas');
             $table->timestamps();
-            $table->foreign("usuarioId")->references("id")->on("usuarios");
-            $table->foreign("contaId")->references("id")->on("contas");
         });
     }
 

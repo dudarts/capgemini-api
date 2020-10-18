@@ -17,7 +17,7 @@ class UsuarioAdmin extends Seeder
         Usuario::create([
             "nome" => "Eduardo Mendes",
             "cpf" => "12345678900",
-            "senha" => md5("12345"),
+            "senha" => "12345",
             "admin" => true
         ]);
     }

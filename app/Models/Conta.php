@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Conta extends Model
 {
+    use HasFactory;
     private $id;
     private $saldo;
     private $tipo;

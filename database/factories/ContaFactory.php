@@ -22,12 +22,14 @@ class ContaFactory extends Factory
      */
     public function definition()
     {
+        $contas = Conta::all()->pluck("id")->toArray();
+        $usuarios = array_diff(Usuario::all()->pluck("id")->toArray(), $contas);
+        $tipo = $this->faker->numberBetween($min = 0, $max = 1);
         return [
-            "saldo" => $this->faker->rand(0, 10000),
-            "tipo" => $this->faker->rand(0, 1),
-            "usuarioId" => function(array $att){
-                return Usuario::find($att["id"])->id;
-            }
+            "saldo" => $this->faker->numberBetween($min = 0, $max = 10000),
+            "tipo" => $tipo,
+            "limite" => $tipo == 1 ? 1000 : 0,
+            "usuarioId" => $this->faker->randomElement($usuarios)
         ];
     }
 }

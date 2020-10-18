@@ -22,11 +22,10 @@ class ExtratoFactory extends Factory
      */
     public function definition()
     {
+        $contas = Conta::all()->pluck("id")->toArray();
         return [
-            "valor" => $this->faker->rand(-10, 100),
-            "contaId" => function(array $att){
-                return Conta::find($att["id"])->id;
-            }
+            "valor" => $this->faker->numberBetween($min = -10, $max = 100),
+            "contaId" => $this->faker->randomElement($contas)
         ];
     }
 }
